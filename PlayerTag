@@ -1,0 +1,13 @@
+using UnityEngine;
+using TMPro;
+
+public class PlayerTag : MonoBehaviour
+{
+    public TMP_Text playerTagText;
+
+    private void Start()
+    {
+        string username = PlayerPrefs.GetString("PlayerUsername", "Player");
+        playerTagText.text = username;
+    }
+}
