@@ -1,0 +1,40 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class GameManager : MonoBehaviour
+{
+    public List<Sprite> skins;
+    public Vector3 spawnPosition = Vector3.zero;
+
+    private void Start()
+    {
+        int selectedSkinIndex = PlayerPrefs.GetInt("SelectedSkinIndex", 0);
+        string username = PlayerPrefs.GetString("PlayerUsername", "Player");
+
+        GameObject playerPrefab = Resources.Load<GameObject>("selectedskin");
+        if (playerPrefab != null)
+        {
+            GameObject playerInstance = Instantiate(playerPrefab, spawnPosition, Quaternion.identity);
+
+           
+            Sprite selectedSprite = skins[selectedSkinIndex];
+            playerInstance.GetComponent<SpriteRenderer>().sprite = selectedSprite;
+
+            PlayerTag playerTagComponent = playerInstance.GetComponentInChildren<PlayerTag>();
+            if (playerTagComponent != null && playerTagComponent.playerTagText != null)
+            {
+                playerTagComponent.playerTagText.text = username;
+            }
+            else
+            {
+                Debug.LogWarning("player username can not load");
+            }
+        }
+        else
+        {
+            Debug.LogError("The player had an issue with loading");
+        }
+    }
+}
