@@ -1,0 +1,29 @@
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
+
+public class UsernameMenuUI : MonoBehaviour
+{
+    public TMP_InputField usernameInput;
+    public Button playButton;
+
+    private void Start()
+    {
+        playButton.onClick.AddListener(OnPlayButtonPressed);
+    }
+
+    private void OnPlayButtonPressed()
+    {
+        string username = usernameInput.text;
+        if (!string.IsNullOrEmpty(username))
+        {
+            PlayerPrefs.SetString("PlayerUsername", username);
+            SceneManager.LoadScene("MainGame");
+        }
+        else
+        {
+            Debug.LogWarning("Username cannot be empty.");
+        }
+    }
+}
