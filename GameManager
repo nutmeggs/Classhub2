@@ -1,5 +1,8 @@
 //takes care of player spawning, and spawning in the selected skin
 //also spawns in the players username that they entered
+//improvement is to add dynamic player movement
+//improvememt - I used the same player prefab from the skin selection and the game meaning the one in the skin
+selection shows the player tag. 
 
 using System.Collections;
 using System.Collections.Generic;
