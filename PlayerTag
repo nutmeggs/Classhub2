@@ -1,3 +1,5 @@
+//handles the display of the player tag by pulling out user info from PlayerPrefs
+
 using UnityEngine;
 using TMPro;
 
