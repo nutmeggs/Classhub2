@@ -1,3 +1,7 @@
+//Manages ingame chat. Input updates the UI chat box
+// Every line above 50, the first deletes
+// Using playerprefs, every message is started with their "username:"
+
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
