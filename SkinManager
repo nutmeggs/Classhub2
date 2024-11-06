@@ -1,4 +1,7 @@
-using System.Collections;
+//allows player to cycle through a range of skins using buttons and a list of sprites
+//improvement could be adding more selection, or allowing customisation
+//improvement could be allowing keyboard inputs instead of just pressing button with mouse/touchpad
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
